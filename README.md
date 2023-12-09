@@ -1,2 +1,4 @@
 # Pemdas_Itenas
-Kumpulan Tugas Pemdas 
+Kelas: EE<br>
+NRP: 15-2022-029<br>
+Nama: Bagus Anugrah<br>

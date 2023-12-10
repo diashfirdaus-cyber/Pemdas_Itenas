@@ -1,2 +1,3 @@
 # Pemdas_Itenas
-Kumpulan Tugas Pemdas 
+Tugas git dan py 
+G_152021077_RezaMJulian 

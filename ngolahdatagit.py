@@ -21,6 +21,7 @@ df["setelah peningkatan"] = df["Gaji"].apply(lambda x: x * 1.05)
 
 # Setelah perubahan dilakukan, tampilkan DataFrame yang sudah diperbarui dan berikan ringkasan perubahan yang telah terjadi.
 df['nilai yang ditambahkan'] = df["Gaji"].apply(lambda x:x*0.05)
+print(df)
 # Pertanyaan 3:
 
 # Gunakan loop for lagi untuk mengevaluasi karyawan yang usianya di atas 30 tahun. Jika usia karyawan di atas 30, berikan peningkatan tambahan sebesar 2% dari gaji saat ini menggunakan fungsi lambda.

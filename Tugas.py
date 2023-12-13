@@ -8,9 +8,9 @@ df = pd.DataFrame(data)
 # Pertanyaan 1:
 
 # Gunakan loop for dan fungsi lambda untuk menghitung gaji setiap karyawan setelah diberikan peningkatan sebesar 5% dari gaji saat ini.
-setelah_peningkatan = lambda gaji: gaji * 1.05
+setelah_peningkatan = lambda gaji: gaji * 0.05
 for i, row in df.iterrows():
-    df.at[i, 'Gaji'] = setelah_peningkatan(row['Gaji'])
+        df.at[i,'Gaji_Peningkatan'] = setelah_peningkatan(row['Gaji']) + row['Gaji']
 
 # Pertanyaan 2:
 # Setelah perubahan dilakukan, tampilkan DataFrame yang sudah diperbarui dan berikan ringkasan perubahan yang telah terjadi.
@@ -20,15 +20,15 @@ print(df)
 #ringkasan
 print("\nRingkasan Perubahan:")
 for i, row in df.iterrows():
-    print(f"Gaji {row['Nama']} sebelumnya: {row['Gaji'] / 1.05:.2f}, Gaji peningkatan: {row['Gaji']:.2f}")
+        print(f"Gaji {row['Nama']} sebelumnya: {row['Gaji']}, Gaji peningkatan: {row['Gaji_Peningkatan']}")
 
 # Pertanyaan 3:
 # Gunakan loop for lagi untuk mengevaluasi karyawan yang usianya di atas 30 tahun. Jika usia karyawan di atas 30, berikan peningkatan tambahan sebesar 2% dari gaji saat ini menggunakan fungsi lambda.
 for i, row in df.iterrows():
-    # Evaluasi usia karyawan
-    if row['Usia'] > 30:
-        # Berikan peningkatan tambahan 2% menggunakan fungsi lambda
-        df.at[i, 'Gaji'] = (lambda gaji: gaji * 1.02)(row['Gaji'])
+        if row['Usia'] > 30:
+                df.at[i, 'Gaji_usia_lebih_30Tahun'] = (lambda gaji: gaji * 1.02)(row['Gaji_Peningkatan'])
+        else:
+                df.at[i, 'Gaji_usia_lebih_30Tahun'] = row['Gaji_Peningkatan']
 
 # Pertanyaan 4:
 # Tampilkan DataFrame yang sudah diperbarui setelah peningkatan gaji tambahan dan berikan ringkasan hasilnya.
@@ -38,7 +38,7 @@ print(df)
 #ringkasan
 print("\nRingkasan Perubahan:")
 for i, row in df.iterrows():
-    print(f"Gaji {row['Nama']} sebelumnya: {row['Gaji'] / 1.07:.2f}, Gaji peningkatan: {row['Gaji']:.2f}")
+        print(f"Gaji {row['Nama']} sebelumnya: {row['Gaji_Peningkatan']}, Gaji peningkatan: {row['Gaji_usia_lebih_30Tahun']:.2f}")
 
 # ---------------------------- #
 # Buat Branch Baru pada repository github berikut dengan format KELAS_NRP_NAMA
